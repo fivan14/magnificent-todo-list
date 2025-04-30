@@ -26,10 +26,37 @@
                 <button class="button mt-4">Button</button>
             </div>
         </div>
+        <div class="select">
+            <select>
+              <option>Kategorija</option>
+              <option>Posao</option>
+              <option>Regeneracija</option>
+              <option>Ucenje</option>
+            </select>
+          </div>
     </div>
-        <progress class="progress is-danger bar mt-3" value="40" max="100">
-            </progress>
-    
+    <div class="container mt-4">
+        <p class="in-progress"> In progress:</p>
+        <div class="box todo">
+            <div class="columns">
+                <div class="column is-four-fifths">
+                    I'm and example todo
+                </div>
+                <div class="column">
+                    <button class="delete" aria-label="close"></button>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="container details fade-slide hidden">
+            <p>Ovo je neki korak</p>
+            <p>Ovo je neki korak</p>
+            <progress class="progress is-danger bar mt-2 mb-4" value="40" max="100"></progress>
+        </div>
+        <div class="box todo">I'm and example todo</div>
+
+    </div>
     
   </section>
   <script src="script.js"></script>
