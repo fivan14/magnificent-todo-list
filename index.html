@@ -9,46 +9,85 @@
 </head>
   <body>
   <section class="section is-flex is-flex-direction-column">
-    <div class="container">
-      <h1 class="title">
-        MAGNIFICIENT TODO LIST
-      </h1>
-      <p class="subtitle">
-        Small JavaScript <strong>project.</strong><br>Plus local storage.
-      </p>
-    </div>
-    <div id="add-todo-container" class="container ">
-        <input class="input mt-4 input-bar" type="text" placeholder="Text input" />
-    </div>
-<!-- select dropdown za biranje kategorije plus button -->
-
-    <div class="container">
-      <div id="select-button-container" class="container mt-4 is-flex is-justify-content-space-between  is-pulled-left">
-        <div class="select">
-          <select>
-            <option>Kategorija</option>
-            <option>Posao</option>
-            <option>Regeneracija</option>
-            <option>Ucenje</option>
-          </select>
+    <div class="container hero-container is-flex is-justify-content-space-between">
+      <div id="main-container" class="container is-flex is-flex-direction-column is-justify-content-flex-start is-flex-wrap-wrap-reverse">
+        <h1 class="title">
+          MAGNIFICIENT TODO LIST
+        </h1>
+        <p class="subtitle">
+          Small JavaScript <strong>project.</strong><br>Plus local storage.
+        </p>
+        <div id="add-todo-container" class="container ">
+          <input class="input mt-4 input-bar" type="text" placeholder="Text input" />
         </div>
-        <button class="button">Add Todo</button>
-      </div> 
+  
+        <!-- select dropdown za biranje kategorije plus button -->
+  
+        <div class="container">
+          <div id="select-button-container" class="container mt-4 is-flex is-justify-content-space-between  is-pulled-left">
+            <div class="select">
+              <select>
+                <option>Kategorija</option>
+                <option>Posao</option>
+                <option>Regeneracija</option>
+                <option>Ucenje</option>
+              </select>
+            </div>
+            <button class="button is-link">Add Todo</button>
+          </div> 
+        </div>
+      </div>  
+      <div class="container img-container is-flex-grow-0">
+        <img src="./slike/13244065_5186784.jpg" alt="">
+      </div>
+      
     </div>
-    <div class="section">
+    
+    
+
+    
+    <div id="category-section" class="section mt-5">
+      <hr>
       <div class="columns">
         <div class="column">
           <div class="container mt-4 ">
-            <p class="in-progress">Scheduled:</p>
+            <div class="container filter-button is-flex is-justify-content-space-between">
+              <p class="in-progress">Scheduled:</p>
+              <div class="select is-small">
+                <select>
+                  <option>Filter</option>
+                  <option>With options</option>
+                </select>
+              </div>
+            </div>
+            
             <div class="container">
               <div class="box todo">
                 I'm and example todo
                 <button class="delete is-pulled-right" aria-label="close"></button>
              </div>
+
+<!-- container / progress bar sa detaljima i koracima  HIDE/SHOW -->
              <div class="container details fade-slide hidden">
-              <p>Ovo je neki korak</p>
-              <p>Ovo je neki korak</p>
-              <progress class="progress is-danger bar mt-2 mb-4" value="40" max="100"></progress>
+                <div class="container mb-4 is-flex is-justify-content-space-between">
+                  <input
+                  class="input is-small"
+                  type="text"
+                  placeholder="Add small step"
+                />
+                <button id="add-small-step" class="button is-small is-danger">Small</button>  
+                </div>  
+                <div class="container is-flex is-flex-direction-column">
+                  <label class="checkbox">
+                    <input type="checkbox" checked />
+                    Instalirati Bulmu i upoznati klase
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox" />
+                    Prouciti flexbox
+                  </label>
+                </div>
+              <progress class="progress is-danger bar mt-2 mb-4" value="50" max="100"></progress>
           </div>
             </div>
             

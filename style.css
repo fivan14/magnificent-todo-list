@@ -11,8 +11,18 @@
 /* .progress {
     display: none;
 } */
+.img-container {
+   max-width: 200px;
+   max-height: 200px;
+   overflow: hidden;
 
+}
 
+@media only screen and (max-width: 712px) {
+    .img-container {
+        display: none;
+    }
+  }
 
 .input-bar {
     max-width: 450px;
@@ -26,9 +36,18 @@
     max-width: 450px;
 }
 
+#category-section {
+    padding: 0px;
+}
+
 .box {
     background-color: rgba(85, 250, 247, 0.304);
 }
+
+#add-small-step {
+    margin-left: 10px;
+}
+
 .fade-slide {
     overflow: hidden;
     transition: opacity 0.3s ease, max-height 0.3s ease;
