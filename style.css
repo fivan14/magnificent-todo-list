@@ -1,12 +1,33 @@
-.section {
-    width: 50%;
-}
+/* * {
+    border: 1px solid red;
+} */
 
+/* .section {
+    width: 50%;
+} */
+/* #add-todo-container {
+    max-width: 450px;
+} */
 /* .progress {
     display: none;
 } */
+
+
+
+.input-bar {
+    max-width: 450px;
+}
+
 .in-progress {
     margin: 0 0 10px 10px;
+}
+
+#select-button-container {
+    max-width: 450px;
+}
+
+.box {
+    background-color: rgba(85, 250, 247, 0.304);
 }
 .fade-slide {
     overflow: hidden;

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
   <body>
-  <section class="section">
+  <section class="section is-flex is-flex-direction-column">
     <div class="container">
       <h1 class="title">
         MAGNIFICIENT TODO LIST
@@ -17,46 +17,83 @@
         Small JavaScript <strong>project.</strong><br>Plus local storage.
       </p>
     </div>
-    <div class="container">
-        <div class="columns">
-            <div class="column is-four-fifths">
-                <input class="input mt-4" type="text" placeholder="Text input" />
-            </div>
-            <div class="column">
-                <button class="button mt-4">Button</button>
-            </div>
-        </div>
-        <div class="select">
-            <select>
-              <option>Kategorija</option>
-              <option>Posao</option>
-              <option>Regeneracija</option>
-              <option>Ucenje</option>
-            </select>
-          </div>
+    <div id="add-todo-container" class="container ">
+        <input class="input mt-4 input-bar" type="text" placeholder="Text input" />
     </div>
-    <div class="container mt-4">
-        <p class="in-progress"> In progress:</p>
-        <div class="box todo">
-            <div class="columns">
-                <div class="column is-four-fifths">
-                    I'm and example todo
-                </div>
-                <div class="column">
-                    <button class="delete" aria-label="close"></button>
-                </div>
-            </div>
-            
-            
-        </div>
-        <div class="container details fade-slide hidden">
-            <p>Ovo je neki korak</p>
-            <p>Ovo je neki korak</p>
-            <progress class="progress is-danger bar mt-2 mb-4" value="40" max="100"></progress>
-        </div>
-        <div class="box todo">I'm and example todo</div>
+<!-- select dropdown za biranje kategorije plus button -->
 
+    <div class="container">
+      <div id="select-button-container" class="container mt-4 is-flex is-justify-content-space-between  is-pulled-left">
+        <div class="select">
+          <select>
+            <option>Kategorija</option>
+            <option>Posao</option>
+            <option>Regeneracija</option>
+            <option>Ucenje</option>
+          </select>
+        </div>
+        <button class="button">Add Todo</button>
+      </div> 
     </div>
+    <div class="section">
+      <div class="columns">
+        <div class="column">
+          <div class="container mt-4 ">
+            <p class="in-progress">Scheduled:</p>
+            <div class="container">
+              <div class="box todo">
+                I'm and example todo
+                <button class="delete is-pulled-right" aria-label="close"></button>
+             </div>
+             <div class="container details fade-slide hidden">
+              <p>Ovo je neki korak</p>
+              <p>Ovo je neki korak</p>
+              <progress class="progress is-danger bar mt-2 mb-4" value="40" max="100"></progress>
+          </div>
+            </div>
+            
+            <div class="box todo">I'm and example todo</div>
+        </div>
+        </div>
+        <div class="column">
+          <div class="container mt-4 ">
+            <p class="in-progress"> In progress:</p>
+            <div class="container">
+              <div class="box todo">
+                I'm and example todo
+                <button class="delete is-pulled-right" aria-label="close"></button>
+             </div>
+             <div class="container details fade-slide hidden">
+              <p>Ovo je neki korak</p>
+              <p>Ovo je neki korak</p>
+              <progress class="progress is-danger bar mt-2 mb-4" value="40" max="100"></progress>
+          </div>
+            </div>
+            
+            <div class="box todo">I'm and example todo</div>
+        </div>
+        </div>
+        <div class="column">
+          <div class="container mt-4 ">
+            <p class="in-progress">Finished:</p>
+            <div class="container">
+              <div class="box todo">
+                I'm and example todo
+                <button class="delete is-pulled-right" aria-label="close"></button>
+             </div>
+             <div class="container details fade-slide hidden">
+              <p>Ovo je neki korak</p>
+              <p>Ovo je neki korak</p>
+              <progress class="progress is-danger bar mt-2 mb-4" value="40" max="100"></progress>
+          </div>
+            </div>
+            
+            <div class="box todo">I'm and example todo</div>
+        </div>
+        </div>
+      </div>
+    </div>
+    
     
   </section>
   <script src="script.js"></script>
