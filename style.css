@@ -40,6 +40,11 @@
     padding: 0px;
 }
 
+#status-columns {
+    min-width: 1000px;
+    overflow: scroll;
+}
+
 .box {
     background-color: rgba(85, 250, 247, 0.304);
 }
