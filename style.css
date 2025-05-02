@@ -1,6 +1,6 @@
-/* * {
+* {
     border: 1px solid red;
-} */
+}
 
 /* .section {
     width: 50%;
@@ -11,18 +11,8 @@
 /* .progress {
     display: none;
 } */
-.img-container {
-   max-width: 200px;
-   max-height: 200px;
-   overflow: hidden;
 
-}
 
-@media only screen and (max-width: 712px) {
-    .img-container {
-        display: none;
-    }
-  }
 
 .input-bar {
     max-width: 450px;
@@ -42,7 +32,7 @@
 
 
 .box {
-    background-color: rgba(85, 250, 247, 0.304);
+    background-color: rgba(85, 250, 247, 0.142);
 }
 
 #add-small-step {
@@ -62,6 +52,14 @@
     pointer-events: none;
   }
 
-.clear {
-    border-radius: 50%;
-}
+
+  .delete {
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    opacity: 1;
+  }
+
+  .delete.hidden {
+    opacity: 0;
+    max-height: 0;
+    pointer-events: none;
+  }
