@@ -53,26 +53,16 @@ addTodoButton.addEventListener('click', () => {
     }
 })
 
-// event click i dodavanje small stepa
-
-// addSmallStep.addEventListener('click', () => {
-//     if (smallStepInput.value.trim().length > 0) {
-//         checkboxContainer.innerHTML = (`
-//                   <label class="checkbox">
-//                       <input type="checkbox" />
-//                         ${smallStepInput.value}
-//                   </label>` + checkboxContainer.innerHTML)
-//         smallStepInput.value = ''
-//     }
-// })
-
-//---------------------------------------
 
 // add event to show details on click
 
 todoWrapper.addEventListener('click', (e) => {
     const todoItem = e.target.closest('.todo-item')
     if (!todoItem) return 
+
+    if (e.target.matches('.delete')) {
+      e.target.closest('.todo-item').remove()
+    }
 
     if (e.target.closest('.todo')) {
       const details = todoItem.querySelector('.details')
@@ -85,13 +75,13 @@ todoWrapper.addEventListener('click', (e) => {
       const input = todoItem.querySelector('#small-step-input')
 
       if (input.value) {
-        checkboxContainer.innerHTML += `
+        checkboxContainer.innerHTML = (`
                     <label class="checkbox">
                       <input type="checkbox" />
                       ${input.value.trim()}
-                    </label> `
+                    </label>` +  checkboxContainer.innerHTML)
 
-        checkboxContainer.innerHTML = ''
+        input.value = ''
       }
       
     }
@@ -100,15 +90,19 @@ todoWrapper.addEventListener('click', (e) => {
 
 //add / remove clear button on todo's
 
-todo.addEventListener('mouseenter', () => {
-    clear.classList.toggle('hidden')
-    // kad miš uđe
-  });
-  
-  todo.addEventListener('mouseleave', () => {
-    clear.classList.toggle('hidden')
-    // kad miš izađe
-  });
+todoWrapper.addEventListener('mouseover', (e)=> {
+  const todo = e.target.closest('.todo')
+  if (!todo) return
+  const deleteButton = todo.querySelector('.delete')
+  console.log('Enter the todo')
+  deleteButton.classList.toggle('hidden')
+})
 
 
-  //delete todo
+todoWrapper.addEventListener('mouseout', (e)=> {
+    const todo = e.target.closest('.todo')
+    if (!todo) return
+    const deleteButton = todo.querySelector('.delete')
+    console.log('exit the todo')
+    deleteButton.classList.toggle('hidden')
+  })
