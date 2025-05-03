@@ -58,32 +58,35 @@
             </div>
             
             <div class="container todo-wrapper"><!--   dodao todo wrapper ovdje!!!!! -->
-              <div class="box todo">
-                I'm and example todo
-                <button class="delete hidden is-pulled-right" aria-label="close"></button>
-             </div>
-
-<!-- container / progress bar sa detaljima i koracima  HIDE/SHOW -->
-             <div class="container details fade-slide hidden">
-                
-              <div class="container mb-4 is-flex is-justify-content-space-between">
+              <div class="todo-item">
+                <div class="box todo">
+                  I'm and example todo
+                  <button class="delete hidden is-pulled-right" aria-label="close"></button>
+               </div>
+  
+  <!-- container / progress bar sa detaljima i koracima za HIDE/SHOW -->
+               <div class="container details fade-slide hidden">
                   
-                <input id="small-step-input" class="input is-small" type="text" placeholder="Add small step"/>
-                <button id="add-small-step" class="button is-small is-danger">Add Step</button>  
-                
-              </div>  
-              <div class="checkbox-container container is-flex is-flex-direction-column">
-                  <label class="checkbox">
-                    <input type="checkbox" checked />
-                    Instalirati Bulmu i upoznati klase
-                  </label>
-                  <label class="checkbox">
-                    <input type="checkbox" />
-                    Prouciti flexbox
-                  </label>
+                <div class="container mb-4 is-flex is-justify-content-space-between">
+                    
+                  <input id="small-step-input" class="input is-small" type="text" placeholder="Add small step"/>
+                  <button id="add-small-step" class="button is-small is-danger">Add Step</button>  
+                  
+                </div>  
+                <div class="checkbox-container container is-flex is-flex-direction-column">
+                    <label class="checkbox">
+                      <input type="checkbox" checked />
+                      Instalirati Bulmu i upoznati klase
+                    </label>
+                    <label class="checkbox">
+                      <input type="checkbox" />
+                      Prouciti flexbox
+                    </label>
+                </div>
+                <progress class="progress is-danger bar mt-2 mb-4" value="50" max="100"></progress>
               </div>
-              <progress class="progress is-danger bar mt-2 mb-4" value="50" max="100"></progress>
-            </div>
+              </div>
+              
           </div>
             
         </div>
