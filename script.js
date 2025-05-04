@@ -37,16 +37,9 @@ addTodoButton.addEventListener('click', () => {
                   
                 </div>  
                 <div class="checkbox-container container is-flex is-flex-direction-column">
-                    <label class="checkbox">
-                      <input type="checkbox" checked />
-                      Instalirati Bulmu i upoznati klase
-                    </label>
-                    <label class="checkbox">
-                      <input type="checkbox" />
-                      Prouciti flexbox
-                    </label>
+                    
                 </div>
-                <progress class="progress is-danger bar mt-2 mb-4" value="50" max="100"></progress>
+                <progress class="progress is-danger bar mt-2 mb-4" value="0" max="100"></progress>
               </div>`
 
       addTodoTaskInput.value = ''
@@ -67,23 +60,39 @@ todoWrapper.addEventListener('click', (e) => {
     if (e.target.closest('.todo')) {
       const details = todoItem.querySelector('.details')
       details.classList.toggle('hidden')
+      
     }
 
     if (e.target.closest('#add-small-step')) {
       console.log('Small button clicked!')
       const checkboxContainer = todoItem.querySelector('.checkbox-container')
       const input = todoItem.querySelector('#small-step-input')
+      const progressBar = todoItem.querySelector('.progress')
 
       if (input.value) {
-        checkboxContainer.innerHTML = (`
-                    <label class="checkbox">
-                      <input type="checkbox" />
-                      ${input.value.trim()}
-                    </label>` +  checkboxContainer.innerHTML)
+        const label = document.createElement('label');
+        label.classList = 'checkbox'
+        label.innerHTML = `<input type='checkbox'/>
+                            ${input.value.trim()}`
+        checkboxContainer.insertBefore(label, checkboxContainer.children[0])
 
-        input.value = ''
+        const checkboxes = [...todoItem.querySelectorAll('input[type="checkbox"]')];
+        const checkedCount = checkboxes.filter(cb => cb.checked).length;                // Kod za provjeru checkboxa se ponavlja, FUNKCIJA
+        let ukupno = checkboxes.length
+        progressBar.value = checkedCount * (100 / ukupno)
       }
       
+    }
+
+    if (e.target.closest('.checkbox')) {
+        const progressBar = todoItem.querySelector('.progress')
+        const checkboxes = [...todoItem.querySelectorAll('input[type="checkbox"]')];
+        const checkedCount = checkboxes.filter(cb => cb.checked).length;
+        let ukupno = checkboxes.length
+                                                                                        // Kod za provjeru checkboxa se ponavlja, FUNKCIJA 
+        console.log(ukupno)
+        console.log(checkedCount)
+        progressBar.value = checkedCount * (100 / ukupno)
     }
     
 })

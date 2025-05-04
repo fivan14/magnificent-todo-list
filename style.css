@@ -13,6 +13,9 @@
 } */
 
 
+.column {
+    max-width: 500px;
+}
 
 .input-bar {
     max-width: 450px;
