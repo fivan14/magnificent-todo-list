@@ -133,6 +133,7 @@ todoWrapper.addEventListener('mouseover', (e)=> {
   const deleteButton = todo.querySelector('.delete')
   console.log('Enter the todo')
   deleteButton.classList.toggle('hidden')
+  todo.classList.toggle('todo-highlight')
 })
 
 
@@ -142,4 +143,5 @@ todoWrapper.addEventListener('mouseout', (e)=> {
     const deleteButton = todo.querySelector('.delete')
     console.log('exit the todo')
     deleteButton.classList.toggle('hidden')
+    todo.classList.toggle('todo-highlight')
   })

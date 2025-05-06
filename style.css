@@ -38,6 +38,10 @@
     background-color: rgba(85, 250, 247, 0.142);
 }
 
+.todo-highlight {
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
 #add-small-step {
     margin-left: 10px;
 }
