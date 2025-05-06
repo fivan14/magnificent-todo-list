@@ -95,7 +95,7 @@ todoWrapper.addEventListener('click', (e) => {
 
       if (input.value) {
         const label = document.createElement('label');
-        label.classList = 'checkbox is-flex'
+        label.classList = 'checkbox is-flex mb-2'
         label.innerHTML = `<input type='checkbox'/>
                             <div class='container is-flex is-justify-content-space-between'>
                             ${input.value.trim()} <button class="delete delete-list is-small hidden"></button></div>`
