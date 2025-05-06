@@ -24,7 +24,7 @@ addTodoButton.addEventListener('click', () => {
               <div class="todo-item">
                 <div class="box todo">
                   ${addTodoTaskInput.value.trim()}
-                  <button class="delete hidden is-pulled-right" aria-label="close"></button>
+                  <button class="delete delete-main hidden is-pulled-right" aria-label="close"></button>
                 </div>
   
   <!-- container / progress bar sa detaljima i koracima za HIDE/SHOW -->
@@ -46,15 +46,39 @@ addTodoButton.addEventListener('click', () => {
     }
 })
 
+todoWrapper.addEventListener('mouseover', (e) => {
+  label = e.target.closest('label')
+  if (!label) return;
 
+  if (e.target.closest('.checkbox')) {
+    listDelete = label.querySelector('.delete')
+    listDelete.classList.toggle('hidden')
+    console.log('entered checkbox element')
+  }
+})
+
+todoWrapper.addEventListener('mouseout', (e) => {
+  label = e.target.closest('label')
+  if (!label) return;
+
+  if (e.target.closest('.checkbox')) {
+    listDelete = label.querySelector('.delete')
+    listDelete.classList.toggle('hidden')
+    console.log('entered checkbox element')
+  }
+})
 // add event to show details on click
 
 todoWrapper.addEventListener('click', (e) => {
     const todoItem = e.target.closest('.todo-item')
     if (!todoItem) return 
 
-    if (e.target.matches('.delete')) {
+    if (e.target.matches('.delete-main')) {
       e.target.closest('.todo-item').remove()
+    }
+
+    if (e.target.matches('.delete-list')) {
+      e.target.closest('label').remove()
     }
 
     if (e.target.closest('.todo')) {
@@ -71,15 +95,18 @@ todoWrapper.addEventListener('click', (e) => {
 
       if (input.value) {
         const label = document.createElement('label');
-        label.classList = 'checkbox'
+        label.classList = 'checkbox is-flex'
         label.innerHTML = `<input type='checkbox'/>
-                            ${input.value.trim()}`
+                            <div class='container is-flex is-justify-content-space-between'>
+                            ${input.value.trim()} <button class="delete delete-list is-small hidden"></button></div>`
         checkboxContainer.insertBefore(label, checkboxContainer.children[0])
 
         const checkboxes = [...todoItem.querySelectorAll('input[type="checkbox"]')];
         const checkedCount = checkboxes.filter(cb => cb.checked).length;                // Kod za provjeru checkboxa se ponavlja, FUNKCIJA
         let ukupno = checkboxes.length
         progressBar.value = checkedCount * (100 / ukupno)
+
+        input.value = ''
       }
       
     }
@@ -89,11 +116,12 @@ todoWrapper.addEventListener('click', (e) => {
         const checkboxes = [...todoItem.querySelectorAll('input[type="checkbox"]')];
         const checkedCount = checkboxes.filter(cb => cb.checked).length;
         let ukupno = checkboxes.length
-                                                                                        // Kod za provjeru checkboxa se ponavlja, FUNKCIJA 
+                           // Kod za provjeru checkboxa se ponavlja, FUNKCIJA 
         console.log(ukupno)
         console.log(checkedCount)
         progressBar.value = checkedCount * (100 / ukupno)
     }
+
     
 })
 
